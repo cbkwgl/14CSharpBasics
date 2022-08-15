@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 //Importing a new class file
 using _14CSharpBasics.Classes;
+using _14CSharpBasics.Interfaces;
 
 namespace _14CSharpBasics
 {
@@ -37,9 +38,16 @@ namespace _14CSharpBasics
             childBankAccount2.AddToBalance(534);
             Console.WriteLine(childBankAccount2.Balance);
 
+            simpleMath SimpleMath = new simpleMath();
+            Console.WriteLine(IInformation(SimpleMath));
+        }
+
+        private static bool IInformation(IInformation information)
+        {
+            information.GetInformation();
         }
     }
-    class simpleMath
+    class simpleMath: IInformation
     {
         public static double Add(double n1, double n2)
         {
@@ -55,6 +63,11 @@ namespace _14CSharpBasics
             }
             return Result;
 
+        }
+
+        public string GetInformation()
+        {
+            return $"SimpleMath Class";
         }
     }
 }

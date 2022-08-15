@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _14CSharpBasics.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _14CSharpBasics.Classes
 {
-    public class BankAccount
+    public class BankAccount : IInformation
     {
         private double balance;
         public double Balance
@@ -39,7 +40,10 @@ namespace _14CSharpBasics.Classes
             return Balance;
         }
 
-        
+        public string GetInformation()
+        {
+            return $"Your Current Balance is: {Balance:c}";
+        }
     }
     //Inheritance
     public class ChildBankAccount : BankAccount
