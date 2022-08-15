@@ -32,6 +32,11 @@ namespace _14CSharpBasics
             childBankAccount.AddToBalance(134);
             Console.WriteLine(childBankAccount.Balance);
 
+            ChildBankAccount childBankAccount2 = new ChildBankAccount();
+            Console.WriteLine(childBankAccount2.Balance);
+            childBankAccount2.AddToBalance(534);
+            Console.WriteLine(childBankAccount2.Balance);
+
         }
     }
     class simpleMath

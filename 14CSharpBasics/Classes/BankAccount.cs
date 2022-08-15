@@ -31,8 +31,9 @@ namespace _14CSharpBasics.Classes
             Balance = initialBalance;
         }
 
-        //Method Overloading
-        public double AddToBalance(double BalanceToBeAdded)
+        //Method Overloading: syntax will stay as is -> public double AddToBalance
+        //Method Overriding: syntax will refer it as virtual
+        public virtual double AddToBalance(double BalanceToBeAdded)
         {
             Balance += BalanceToBeAdded;
             return Balance;
@@ -46,6 +47,17 @@ namespace _14CSharpBasics.Classes
         public ChildBankAccount()
         {
             Balance = 7;
+        }
+        public override double AddToBalance(double BalanceToBeAdded)
+        {
+            if(BalanceToBeAdded < 530)
+            {
+                return base.AddToBalance(BalanceToBeAdded);
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
